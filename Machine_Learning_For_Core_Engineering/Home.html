@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .assignment-card {
+            background-color: white;
+            width: 200px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: 0.3s;
+        }
+        .assignment-card.completed {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+        }
+        .assignment-card h3 {
+            margin: 0 0 10px;
+        }
+        .assignment-card p {
+            margin: 5px 0;
+        }
+        .assignment-card button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .assignment-card button:hover {
+            background-color: #45a049;
+        }
+        .marks {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Student Dashboard</h1>
+</header>
+
+<div class="dashboard" id="dashboard">
+    <!-- Assignment cards will be injected here by JS -->
+</div>
+
+<script>
+    // Array of assignments
+    const assignments = [
+        {id: 1, name: "Assignment 1", marks: 85, completed: true, link: "Assignment1.html"},
+        {id: 2, name: "Assignment 2", marks: 70, completed: false, link: "Assignment2.html"},
+        {id: 3, name: "Assignment 3", marks: 90, completed: true, link: "Assignment3.html"},
+        {id: 4, name: "Assignment 4", marks: 60, completed: false, link: "Assignment4.html"},
+        {id: 5, name: "Assignment 5", marks: 95, completed: true, link: "Assignment5.html"},
+        {id: 6, name: "Assignment 6", marks: 80, completed: false, link: "Assignment6.html"},
+        {id: 7, name: "Assignment 7", marks: 88, completed: true, link: "Assignment7.html"},
+        {id: 8, name: "Assignment 8", marks: 76, completed: false, link: "Assignment8.html"},
+        {id: 9, name: "Assignment 9", marks: 92, completed: true, link: "Assignment9.html"},
+        {id: 10, name: "Assignment 10", marks: 65, completed: false, link: "Assignment10.html"}
+    ];
+
+    const dashboard = document.getElementById('dashboard');
+
+    assignments.forEach(assignment => {
+        const card = document.createElement('div');
+        card.className = 'assignment-card' + (assignment.completed ? ' completed' : '');
+        card.innerHTML = `
+            <h3>${assignment.name}</h3>
+            <p class="marks">Marks: ${assignment.marks}</p>
+            <p>Status: ${assignment.completed ? 'Completed ✅' : 'Pending ❌'}</p>
+            <button onclick="window.location.href='${assignment.link}'">Go to Assignment</button>
+        `;
+        dashboard.appendChild(card);
+    });
+</script>
+
+</body>
+</html>
