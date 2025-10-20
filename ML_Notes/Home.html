@@ -74,6 +74,21 @@
     display: block;
   }
 
+  .view-link {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 8px 14px;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .view-link:hover {
+    background: #1abc9c;
+  }
+
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -117,85 +132,90 @@
   </nav>
 
   <main class="content">
-    <!-- NOTES 1 -->
+
+    <!-- NOTES TEMPLATE -->
     <div id="note1" class="note-section active">
       <h2>Notes 1</h2>
-      <p>📘 <strong>Introduction:</strong> This is the content of Notes 1. You can paste your full notes here.</p>
-      <ul>
-        <li>Concept 1 details...</li>
-        <li>Concept 2 explanation...</li>
-      </ul>
+      <p>This section displays the content or summary of <strong>NOTES1.html</strong>.</p>
+      <a href="NOTES1.html" target="_blank" class="view-link">🔗 View Original Notes 1</a>
     </div>
 
-    <!-- NOTES 2 -->
     <div id="note2" class="note-section">
       <h2>Notes 2</h2>
-      <p>📘 This is the content of Notes 2. Replace with your actual file contents.</p>
+      <p>This section displays the content or summary of <strong>NOTES2.html</strong>.</p>
+      <a href="NOTES2.html" target="_blank" class="view-link">🔗 View Original Notes 2</a>
     </div>
 
-    <!-- NOTES 3 -->
     <div id="note3" class="note-section">
       <h2>Notes 3</h2>
-      <p>📘 Content of Notes 3.</p>
+      <p>This section displays the content or summary of <strong>NOTES3.html</strong>.</p>
+      <a href="NOTES3.html" target="_blank" class="view-link">🔗 View Original Notes 3</a>
     </div>
 
     <div id="note4" class="note-section">
       <h2>Notes 4</h2>
-      <p>📘 Content of Notes 4.</p>
+      <p>This section displays the content or summary of <strong>NOTES4.html</strong>.</p>
+      <a href="NOTES4.html" target="_blank" class="view-link">🔗 View Original Notes 4</a>
     </div>
 
     <div id="note5" class="note-section">
       <h2>Notes 5</h2>
-      <p>📘 Content of Notes 5.</p>
+      <p>This section displays the content or summary of <strong>NOTES5.html</strong>.</p>
+      <a href="NOTES5.html" target="_blank" class="view-link">🔗 View Original Notes 5</a>
     </div>
 
     <div id="note6" class="note-section">
       <h2>Notes 6</h2>
-      <p>📘 Content of Notes 6.</p>
+      <p>This section displays the content or summary of <strong>NOTES6.html</strong>.</p>
+      <a href="NOTES6.html" target="_blank" class="view-link">🔗 View Original Notes 6</a>
     </div>
 
     <div id="note7" class="note-section">
       <h2>Notes 7</h2>
-      <p>📘 Content of Notes 7.</p>
+      <p>This section displays the content or summary of <strong>NOTES7.html</strong>.</p>
+      <a href="NOTES7.html" target="_blank" class="view-link">🔗 View Original Notes 7</a>
     </div>
 
     <div id="note8" class="note-section">
       <h2>Notes 8</h2>
-      <p>📘 Content of Notes 8.</p>
+      <p>This section displays the content or summary of <strong>NOTES8.html</strong>.</p>
+      <a href="NOTES8.html" target="_blank" class="view-link">🔗 View Original Notes 8</a>
     </div>
 
     <div id="note9" class="note-section">
       <h2>Notes 9</h2>
-      <p>📘 Content of Notes 9.</p>
+      <p>This section displays the content or summary of <strong>NOTES9.html</strong>.</p>
+      <a href="NOTES9.html" target="_blank" class="view-link">🔗 View Original Notes 9</a>
     </div>
 
     <div id="note10" class="note-section">
       <h2>Notes 10</h2>
-      <p>📘 Content of Notes 10.</p>
+      <p>This section displays the content or summary of <strong>NOTES10.html</strong>.</p>
+      <a href="NOTES10.html" target="_blank" class="view-link">🔗 View Original Notes 10</a>
     </div>
 
     <div id="note11" class="note-section">
       <h2>Notes 11</h2>
-      <p>📘 Content of Notes 11.</p>
+      <p>This section displays the content or summary of <strong>NOTES11.html</strong>.</p>
+      <a href="NOTES11.html" target="_blank" class="view-link">🔗 View Original Notes 11</a>
     </div>
 
     <div id="note12" class="note-section">
       <h2>Notes 12</h2>
-      <p>📘 Content of Notes 12.</p>
+      <p>This section displays the content or summary of <strong>NOTES12.html</strong>.</p>
+      <a href="NOTES12.html" target="_blank" class="view-link">🔗 View Original Notes 12</a>
     </div>
+
   </main>
 </div>
 
 <script>
   function showNote(noteNumber) {
-    // Hide all notes
     const notes = document.querySelectorAll('.note-section');
     notes.forEach(note => note.classList.remove('active'));
 
-    // Show selected note
     document.getElementById('note' + noteNumber).classList.add('active');
 
-    // Highlight active button
     const buttons = document.querySelectorAll('.sidebar button');
     buttons.forEach(btn => btn.classList.remove('active'));
     buttons[noteNumber - 1].classList.add('active');
